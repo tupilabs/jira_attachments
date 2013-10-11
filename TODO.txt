@@ -1,0 +1,1 @@
+https://issues.apache.org/jira/rest/api/2/issue/LOG4J2-316?expand=changelog
