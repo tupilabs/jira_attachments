@@ -1,0 +1,26 @@
+{
+    "name": "tupilabs/jira-attachments",
+    "description": "Display JIRA Attachments",
+    "keywords": ["jira","attachments"],
+    "homepage": "http://github.com/tupilabs/jira-attachments",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Bruno P. Kinoshita",
+            "email": "brunodepaulak@yahoo.com.br",
+            "homepage": "http://kinoshita.eti.br"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "monolog/monolog": "~1.6",
+        "slim/slim": "2.*",
+        "slim/views": "0.1.*",
+        "slim/extras": "2.*",
+        "twig/twig": "1.*",
+        "leafo/lessphp": "0.3.*",
+        "tedivm/jshrink": "dev-master",
+        "deftx/gump": "dev-master",
+        "nategood/httpful": "*"
+    }
+}

@@ -1,18 +1,20 @@
 .DS_Store
 
-application/cache/*
-!application/cache/index.html
-!application/cache/.htaccess
+views/cache/*
 
-application/logs/*
-!application/logs/index.html
+logs/*
+!logs/index.html
 !application/logs/.htaccess
 
-application/blog/_cache/*
-
+env.*
+composer.phar
 .buildpath
 .project
 .settings/
-/target/
-/dist/
-/blog/
+target/
+bin/
+vendor/
+less.cache
+compiled.css*
+compiled.js*
+*.log
