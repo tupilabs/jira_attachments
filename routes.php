@@ -13,7 +13,7 @@ $app->get('/jira_attachments/', function () use ($app) {
 	$app->render('index.html');
 });
 
-$app->get('/jira_attachments/gallery', function() use ($app, $gump) {
+$app->get('/jira_attachments/gallery/', function() use ($app, $gump) {
 	$rules = array(
 		'jiraUrl'    => 'required|valid_url|max_len,255|min_len,1',
 		'issueNumber'    => 'required|max_len,25|min_len,2'
