@@ -7,7 +7,7 @@
 <meta name="description" content="Give this app a JIRA URL and an issue number, and it will create a gallery with the issue attachments.">
 <meta name="author" content="TupiLabs">
 <!-- Le styles -->
-<link href="{{ siteUrl('css/bootstrap.css', true) }}" rel="stylesheet" />
+<link href="{{ siteUrl('css/bootstrap.css', false) }}" rel="stylesheet" />
 <style>
 body {
     padding-top: 20px;
@@ -53,7 +53,7 @@ display: block;
 }
 </style>
 <link
-    href="{{ siteUrl('css/bootstrap-responsive.css', true) }}"
+    href="{{ siteUrl('css/bootstrap-responsive.css', false) }}"
     rel="stylesheet" />
 <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
 <!--[if lt IE 9]>
@@ -61,17 +61,17 @@ display: block;
 <![endif]-->
 
 <!-- Fav and touch icons -->
-<link rel="shortcut icon"  href="{{ siteUrl('ico/favicon.ico', true) }}">
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ siteUrl('ico/apple-touch-icon-144-precomposed.png', true) }}"/>
-<link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ siteUrl('ico/apple-touch-icon-114-precomposed.png', true) }}"/>
-<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ siteUrl('ico/apple-touch-icon-72-precomposed.png', true) }}"/>
-<link rel="apple-touch-icon-precomposed" href="{{ siteUrl('ico/apple-touch-icon-57-precomposed.png', true) }}"/>
+<link rel="shortcut icon"  href="{{ siteUrl('ico/favicon.ico', false) }}">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ siteUrl('ico/apple-touch-icon-144-precomposed.png', false) }}"/>
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{ siteUrl('ico/apple-touch-icon-114-precomposed.png', false) }}"/>
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ siteUrl('ico/apple-touch-icon-72-precomposed.png', false) }}"/>
+<link rel="apple-touch-icon-precomposed" href="{{ siteUrl('ico/apple-touch-icon-57-precomposed.png', false) }}"/>
 </head>
 <body>
     <div class="container-narrow">
         <div class="masthead">
             <ul class="nav nav-pills pull-right">
-                <li><a href="http://tupilabs.com"><img src="{{ siteUrl('img/tupilabs_mascot.png', true) }}" width="40px" /></a></li>
+                <li><a href="http://tupilabs.com"><img src="{{ siteUrl('img/tupilabs_mascot.png', false) }}" width="40px" /></a></li>
             </ul>
             <h3 class="muted">JIRA Attachments Gallery</h3>
         </div>
@@ -87,7 +87,7 @@ display: block;
         	<strong>Form validation errors found</strong><br/> {{ errors|raw }}
         </div>
         {% endif %}
-        <form method='get' action="{{ siteUrl('gallery', true) }}" class='form-horizontal well'>
+        <form method='get' action="{{ siteUrl('gallery', false) }}" class='form-horizontal well'>
         	<div class='control-group'>
             	<label class='control-label' for='jiraUrl'>JIRA URL</label>
                 <div class='controls'>
@@ -116,19 +116,19 @@ display: block;
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="{{ siteUrl('js/jquery.js', true) }}"></script>
-    <script src="{{ siteUrl('js/bootstrap.min.js', true) }}"></script>
-    <script src="{{ siteUrl('js/bootstrap-transition.js', true) }}"></script>
-    <script src="{{ siteUrl('js/bootstrap-alert.js', true) }}"></script>
-    <script src="{{ siteUrl('js/bootstrap-modal.js', true) }}"></script>
-    <script src="{{ siteUrl('js/bootstrap-dropdown.js', true) }}"></script>
-    <script src="{{ siteUrl('js/bootstrap-scrollspy.js', true) }}"></script>
-    <script src="{{ siteUrl('js/bootstrap-tab.js', true) }}"></script>
-    <script src="{{ siteUrl('js/bootstrap-tooltip.js', true) }}"></script>
-    <script src="{{ siteUrl('js/bootstrap-popover.js', true) }}"></script>
-    <script src="{{ siteUrl('js/bootstrap-button.js', true) }}"></script>
-    <script src="{{ siteUrl('js/bootstrap-collapse.js', true) }}"></script>
-    <script src="{{ siteUrl('js/bootstrap-carousel.js', true) }}"></script>
-    <script src="{{ siteUrl('js/bootstrap-typeahead.js', true) }}"></script>
+    <script src="{{ siteUrl('js/jquery.js', false) }}"></script>
+    <script src="{{ siteUrl('js/bootstrap.min.js', false) }}"></script>
+    <script src="{{ siteUrl('js/bootstrap-transition.js', false) }}"></script>
+    <script src="{{ siteUrl('js/bootstrap-alert.js', false) }}"></script>
+    <script src="{{ siteUrl('js/bootstrap-modal.js', false) }}"></script>
+    <script src="{{ siteUrl('js/bootstrap-dropdown.js', false) }}"></script>
+    <script src="{{ siteUrl('js/bootstrap-scrollspy.js', false) }}"></script>
+    <script src="{{ siteUrl('js/bootstrap-tab.js', false) }}"></script>
+    <script src="{{ siteUrl('js/bootstrap-tooltip.js', false) }}"></script>
+    <script src="{{ siteUrl('js/bootstrap-popover.js', false) }}"></script>
+    <script src="{{ siteUrl('js/bootstrap-button.js', false) }}"></script>
+    <script src="{{ siteUrl('js/bootstrap-collapse.js', false) }}"></script>
+    <script src="{{ siteUrl('js/bootstrap-carousel.js', false) }}"></script>
+    <script src="{{ siteUrl('js/bootstrap-typeahead.js', false) }}"></script>
 </body>
 </html>
