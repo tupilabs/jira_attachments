@@ -2,7 +2,7 @@
 require __DIR__.'/vendor/autoload.php';
 session_cache_limiter(false);
 session_start();
-$mode = 'live';
+$mode = 'local';
 if (array_key_exists('MODE', $_SERVER)) {
 	$mode = $_SERVER['MODE'];
 } else {
@@ -69,27 +69,31 @@ $app->configureMode('local', function () use ($app, $env) {
 	$logWriter = new \Slim\Extras\Log\DateTimeFileWriter(array('path' => __DIR__.'/logs'));
 });
 
-$app->getLog()->setWriter($logWriter);
+#$app->getLog()->setWriter($logWriter);
+
+$log = new \Monolog\Logger('jira-attachments');
+$log->pushHandler(new \Monolog\Handler\StreamHandler('logs/jira-attachments.log', \Psr\Log\LogLevel::DEBUG));
+$app->log = $log;
 
 // Create monolog logger and store logger in container as singleton
 // (Singleton resources retrieve the same log resource definition each time)
-$app->container->singleton('log', function () {
-	$log = new \Monolog\Logger('jira-attachments');
-	$log->pushHandler(new \Monolog\Handler\StreamHandler('logs/jira-attachments.log', \Psr\Log\LogLevel::DEBUG));
-	return $log;
-});
+// $app->container->singleton('log', function () {
+// 	$log = new \Monolog\Logger('jira-attachments');
+// 	$log->pushHandler(new \Monolog\Handler\StreamHandler('logs/jira-attachments.log', \Psr\Log\LogLevel::DEBUG));
+// 	return $log;
+// });
 
 // Prepare view
-$app->view(new \Slim\Views\Twig());
-$app->view->parserOptions = array(
-		'debug' => true,
-		'charset' => 'utf-8',
-		'cache' => realpath('templates/cache'),
-		'auto_reload' => true,
-		'strict_variables' => false,
-		'autoescape' => true
-);
-$app->view->parserExtensions = array(new \Slim\Views\TwigExtension());
+// $app->view(new \Slim\Views\Twig());
+// $app->view->parserOptions = array(
+// 		'debug' => true,
+// 		'charset' => 'utf-8',
+// 		'cache' => realpath('templates/cache'),
+// 		'auto_reload' => true,
+// 		'strict_variables' => false,
+// 		'autoescape' => true
+// );
+ $app->view->parserExtensions = array(new \Slim\Views\TwigExtension());
 
 // Define routes
 require __DIR__.'/routes.php';

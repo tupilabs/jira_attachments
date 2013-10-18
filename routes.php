@@ -3,7 +3,7 @@
 require __DIR__."/gump.class.php";
 $gump = new GUMP();
 // app routes
-$app->get('/', function () use ($app) {
+$app->get('/jira_attachments/', function () use ($app) {
 	$app->log->info("JIRA Attachments '/' route");
 	// UI
 	$flash = $app->view()->getData('flash');
@@ -13,7 +13,7 @@ $app->get('/', function () use ($app) {
 	$app->render('index.html');
 });
 
-$app->get('/gallery', function() use ($app, $gump) {
+$app->get('/jira_attachments/gallery', function() use ($app, $gump) {
 	$rules = array(
 		'jiraUrl'    => 'required|valid_url|max_len,255|min_len,1',
 		'issueNumber'    => 'required|max_len,25|min_len,2'
