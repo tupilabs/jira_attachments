@@ -19,7 +19,7 @@ $app->setName('JIRA Attachments Gallery');
 $app->config('debug', true);
 $app->config('mode', $mode);
 $app->config('view', new \Slim\Views\Twig());
-$app->config('templates.path', realpath('../views'));
+$app->config('templates.path', realpath('views'));
 $env = $app->environment();
 $app->add(new \Slim\Middleware\SessionCookie(array(
 		'expires' => '20 minutes',
@@ -46,7 +46,7 @@ $app->configureMode('live', function () use ($app, $env) {
 	$env['GATRACKER'] = 'UA-????';
 	$app->config('debug', false);
 
-	$logWriter = new \Slim\Extras\Log\DateTimeFileWriter(array('path' => __DIR__.'/../logs'));
+	$logWriter = new \Slim\Extras\Log\DateTimeFileWriter(array('path' => __DIR__.'/logs'));
 });
 
 // if local mode
@@ -75,7 +75,7 @@ $app->getLog()->setWriter($logWriter);
 // (Singleton resources retrieve the same log resource definition each time)
 $app->container->singleton('log', function () {
 	$log = new \Monolog\Logger('jira-attachments');
-	$log->pushHandler(new \Monolog\Handler\StreamHandler('../logs/jira-attachments.log', \Psr\Log\LogLevel::DEBUG));
+	$log->pushHandler(new \Monolog\Handler\StreamHandler('logs/jira-attachments.log', \Psr\Log\LogLevel::DEBUG));
 	return $log;
 });
 
@@ -84,7 +84,7 @@ $app->view(new \Slim\Views\Twig());
 $app->view->parserOptions = array(
 		'debug' => true,
 		'charset' => 'utf-8',
-		'cache' => realpath('../templates/cache'),
+		'cache' => realpath('templates/cache'),
 		'auto_reload' => true,
 		'strict_variables' => false,
 		'autoescape' => true
