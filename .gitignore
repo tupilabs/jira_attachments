@@ -2,8 +2,8 @@
 
 views/cache/*
 
-logs/*
-!logs/index.html
+application/logs/*
+!application/logs/index.html
 !application/logs/.htaccess
 
 env.*
